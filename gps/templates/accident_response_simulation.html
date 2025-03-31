@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Response Simulation</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        let map = L.map('map').setView([20.2961, 85.8245], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        async function fetchAccidentData() {
+            let response = await fetch("/get_accident_data");
+            let data = await response.json();
+
+            let { accident, responders, nearest_responder, hospital } = data;
+
+            responders.forEach(r => {
+                L.marker([r.lat, r.lon], { 
+                    icon: L.icon({iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'}),
+                    title: "Responder"
+                }).addTo(map);
+            });
+
+            setTimeout(() => {
+                L.marker([accident.lat, accident.lon], { 
+                    icon: L.icon({iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'}),
+                    title: "Accident Site"
+                }).addTo(map);
+            }, 5000);
+
+            setTimeout(() => {
+                L.circle([accident.lat, accident.lon], { radius: 500, color: "orange" }).addTo(map);
+            }, 10000);
+
+            setTimeout(() => {
+                drawPath([accident.lat, accident.lon], [nearest_responder.lat, nearest_responder.lon], "orange");
+            }, 15000);
+
+            setTimeout(() => {
+                L.circle([accident.lat, accident.lon], { radius: 500, color: "green" }).addTo(map);
+            }, 20000);
+
+            setTimeout(() => {
+                drawPath([accident.lat, accident.lon], [hospital.lat, hospital.lon], "green");
+            }, 25000);
+        }
+
+        function drawPath(start, end, color) {
+            let url = `https://router.project-osrm.org/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}?overview=full&geometries=geojson`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    let route = data.routes[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+                    L.polyline(route, { color: color, weight: 5 }).addTo(map);
+                });
+        }
+
+        fetchAccidentData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+train: ../fr/images/training
+val: ../fr/labels/validation
+#number of classes
+nc: 1
+#class names
+names: ['surfing']

@@ -1,0 +1,14 @@
+flask
+opencv-python
+pandas
+ultralytics
+cvzone
+requests
+textwrap3
+pillow
+treelib
+pathlib
+cryptography
+ssl
+flask-talisman
+functools

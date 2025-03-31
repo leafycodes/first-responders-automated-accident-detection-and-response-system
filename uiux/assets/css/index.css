@@ -1,0 +1,80 @@
+body {
+    background: url('../images/road.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    width: 80%;
+    max-width: 900px;
+    margin: 0;
+}
+
+.fact-box {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.fact-box:hover {
+    transform: scale(1.03);
+}
+
+.login-container {
+    width: 400px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-container h2 {
+    font-size: 22px;
+    color: black;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
