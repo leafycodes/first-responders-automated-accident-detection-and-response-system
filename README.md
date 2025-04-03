@@ -52,4 +52,5 @@ In addition to the dependencies listed in `requirements.txt`, the following tech
 
 ## Contributors
 This project was developed by a team of five members, with each contributor focusing on a specific module.  
-Collaborators will be added to the repository soon. 
+Collaborators will be added to the repository soon. <br>
+Collaborators: @AnaghDas, @shubhub29
