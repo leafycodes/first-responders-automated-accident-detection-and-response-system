@@ -51,6 +51,5 @@ In addition to the dependencies listed in `requirements.txt`, the following tech
 3. Run the respective scripts to start AI monitoring, video surveillance, UI, or GPS services.
 
 ## Contributors
-This project was developed by a team of five members, with each contributor focusing on a specific module.  
-Collaborators will be added to the repository soon. <br>
-Collaborators: [AnaghDas](https://github.com/AnaghDas), [shubhub29](https://github.com/shubhub29)
+This project was developed by a team of five members, with each contributor focusing on a specific module. <br>
+Contributors: [leafycodes](https://github.com/leafycodes)
