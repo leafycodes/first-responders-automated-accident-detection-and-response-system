@@ -52,5 +52,5 @@ In addition to the dependencies listed in `requirements.txt`, the following tech
 
 ## Contributors
 This project was developed by a team of five members, with each contributor focusing on a specific module. <br>
-Contributors: [leafycodes](https://github.com/leafycodes), [anwesha-24](https://github.com/anwesha-24), [shubhub29](https://github.com/shubhub29)
+Contributors: [leafycodes](https://github.com/leafycodes), [anwesha-24](https://github.com/anwesha-24), [shubhub29](https://github.com/shubhub29), [AnaghDas](https://github.com/AnaghDas)
 
